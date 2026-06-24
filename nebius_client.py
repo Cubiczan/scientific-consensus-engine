@@ -7,6 +7,11 @@ from openai import OpenAI
 
 from cubiczan_resilience import resilient
 
+# --- Datadog LLM Observability (no-op unless DD_LLMOBS_ENABLED) ---
+from observability import init_observability
+
+init_observability("scientific-consensus-engine")
+
 NEBIUS_BASE_URL = "https://api.tokenfactory.nebius.com/v1"
 ORCHESTRATOR_MODEL = "meta-llama/Llama-3.3-70B-Instruct"
 DEBATE_MODEL = "deepseek-ai/DeepSeek-V3.2"
